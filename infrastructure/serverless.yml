@@ -1,0 +1,69 @@
+service: aws-rag-system
+
+provider:
+  name: aws
+  runtime: python3.8
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:*"
+        - "es:*"
+        - "comprehend:*"
+      Resource: "*"
+
+functions:
+  uploadDocument:
+    handler: backend/lambda_functions/upload_document.lambda_handler
+    events:
+      - s3:
+          bucket: rag-documents
+          event: s3:ObjectCreated:*
+
+  searchDocument:
+    handler: backend/lambda_functions/search_document.lambda_handler
+    events:
+      - http:
+          path: search
+          method: get
+          request:
+            parameters:
+              querystrings:
+                query: true
+
+  generateResponse:
+    handler: backend/lambda_functions/generate_response.lambda_handler
+    events:
+      - http:
+          path: generate
+          method: post
+          request:
+            schemas:
+              application/json: ${file(infrastructure/schema.yaml)}
+
+resources:
+  Resources:
+    DocumentsBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: rag-documents
+
+    ElasticSearchDomain:
+      Type: AWS::Elasticsearch::Domain
+      Properties:
+        DomainName: rag-documents
+        ElasticsearchVersion: 7.7
+        ElasticsearchClusterConfig:
+          InstanceType: t3.small.elasticsearch
+          InstanceCount: 1
+        EBSOptions:
+          EBSEnabled: true
+          VolumeSize: 10
+          VolumeType: gp2
+        AccessPolicies:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Principal: '*'
+              Action: 'es:*'
+              Resource: arn:aws:es:us-east-1:YOUR_ACCOUNT_ID:domain/rag-documents/*
