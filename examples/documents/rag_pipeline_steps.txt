@@ -1,0 +1,81 @@
+RAG Pipeline Steps
+1. RAG stands for Retrieval-Augmented Generation.
+2. The pipeline starts by ingesting documents into storage.
+3. Documents are chunked into passages for better retrieval.
+4. Each chunk is indexed for search.
+5. Metadata is attached to each chunk.
+6. A user submits a query to the system.
+7. The query is normalized and tokenized.
+8. The search index retrieves relevant chunks.
+9. Results are ranked using a relevance score.
+10. The top-K chunks are selected as context.
+11. The context is combined with the user query.
+12. A generator produces a response based on query and context.
+13. The response includes citations or references.
+14. The system can log interactions for monitoring.
+15. Feedback can be used to improve retrieval quality.
+16. RAG pipelines can use vector search for semantic retrieval.
+17. Hybrid retrieval combines lexical and semantic ranking.
+18. Preprocessing includes removing boilerplate text.
+19. Chunk size affects recall and latency.
+20. Overlap between chunks can reduce information loss.
+21. RAG pipelines can run in batch or real time.
+22. Ingestion workflows often include OCR for scanned documents.
+23. Metadata filters help constrain searches.
+24. Use tags to support multi-tenant indexing.
+25. Retrieval precision depends on index quality.
+26. RAG responses should avoid hallucination by citing context.
+27. Systems should track the source of each citation.
+28. Prompt templates can standardize answer formatting.
+29. Guardrails can prevent unsafe outputs.
+30. Monitoring should track latency and relevance.
+31. Use caching for repeated queries.
+32. RAG pipelines can include reranking models.
+33. Reranking improves precision over raw search results.
+34. Document updates require reindexing or incremental updates.
+35. Use versioning for large datasets.
+36. Data governance is important for compliance.
+37. Access control should filter documents by user permissions.
+38. Auditing should capture query and response metadata.
+39. A/B testing can compare retrieval strategies.
+40. Index health should be monitored continuously.
+41. RAG pipelines can be deployed with serverless components.
+42. Use queues to decouple ingestion from indexing.
+43. Bulk indexing reduces cost for large updates.
+44. Sample datasets help validate the pipeline.
+45. Integration tests should validate end-to-end behavior.
+46. Deterministic tests reduce flaky CI runs.
+47. Local development should mirror production flows.
+48. RAG systems can integrate with analytics dashboards.
+49. Logs should record query, results, and response IDs.
+50. Store generated responses for reproducibility.
+51. Use embeddings to capture semantic similarity.
+52. For lexical search, use BM25 or similar scoring.
+53. RAG outputs should be concise and grounded.
+54. Consider summarization for long contexts.
+55. Use incremental ingestion for streaming data sources.
+56. Validate content quality before indexing.
+57. Consider language detection for multilingual corpora.
+58. Use stop word lists to reduce noise.
+59. Apply stemming or lemmatization for better recall.
+60. RAG pipelines can include structured data retrieval.
+61. Combine structured and unstructured sources.
+62. Use routing to choose relevant indices.
+63. Use query expansion to improve recall.
+64. Build a consistent schema for document metadata.
+65. Use idempotent ingestion to avoid duplicates.
+66. Evaluate retrieval with precision and recall metrics.
+67. Use human evaluation for response quality.
+68. Add fallback responses when retrieval fails.
+69. Provide clear error messages for missing data.
+70. The pipeline should be observable and testable.
+71. Use local fixtures to validate without cloud dependencies.
+72. Generate reports for verification results.
+73. Validate API contracts with automated tests.
+74. Keep configuration explicit and documented.
+75. Provide scripts to start and verify the pipeline.
+76. Ensure CI runs the same verification steps.
+77. Use deterministic seeds for any randomization.
+78. Keep dependencies minimal for portability.
+79. A local demo should mimic production data flow.
+80. RAG pipelines help ground LLM responses in real data.

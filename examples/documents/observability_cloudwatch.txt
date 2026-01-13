@@ -1,0 +1,81 @@
+Observability and CloudWatch Notes
+1. Observability combines metrics, logs, and traces.
+2. CloudWatch collects metrics for AWS services.
+3. CloudWatch Logs stores application logs.
+4. CloudWatch dashboards visualize metrics.
+5. Alarms trigger notifications when thresholds are met.
+6. Logs insights can query logs using SQL-like syntax.
+7. Use structured logging for better analysis.
+8. Lambda automatically writes logs to CloudWatch Logs.
+9. You can set retention policies for log groups.
+10. CloudWatch metrics include Invocations and Errors for Lambda.
+11. Custom metrics can be published via API.
+12. Use namespaces to organize custom metrics.
+13. CloudWatch can aggregate metrics across resources.
+14. Contributor Insights highlights top talkers in logs.
+15. CloudWatch supports metric math.
+16. Use alarm actions to trigger SNS or auto scaling.
+17. Set alarms on error rates and latency.
+18. Create composite alarms for complex conditions.
+19. CloudWatch Agent can collect system metrics.
+20. Logs can be exported to S3 for analysis.
+21. Use correlation IDs in logs for tracing.
+22. Enable AWS X-Ray for distributed tracing.
+23. X-Ray integrates with Lambda and API Gateway.
+24. Trace IDs help map end-to-end request paths.
+25. Use sampling to control tracing costs.
+26. Create service maps to visualize architecture.
+27. Use dashboards for real-time monitoring.
+28. Use CloudWatch Synthetics for canary tests.
+29. Synthetics can run scheduled canary checks.
+30. CloudWatch can monitor API Gateway latency.
+31. Use log filtering to identify anomalies.
+32. Set up alerts for throttling events.
+33. Monitor concurrency and throttles for Lambda.
+34. Use anomaly detection for baseline shifts.
+35. Use metric filters to create custom metrics from logs.
+36. Use centralized logging for multi-account environments.
+37. Use CloudWatch cross-account dashboards.
+38. Log aggregation helps with incident response.
+39. Export metrics to third-party systems if needed.
+40. Include build and version info in logs.
+41. Use request IDs to trace API calls.
+42. API Gateway adds request context to logs.
+43. Set CloudWatch alarm on DLQ messages.
+44. Monitor SQS queue depth for backlogs.
+45. Monitor DynamoDB throttles if using it.
+46. Use CloudWatch to monitor search latency.
+47. Collect query performance metrics.
+48. Track RAG response time and token usage.
+49. Use dashboards to compare environments.
+50. Monitor storage usage in S3.
+51. Set budget alerts for cost control.
+52. Use CloudWatch Events (EventBridge) for scheduled tasks.
+53. Use logs to debug ingestion pipelines.
+54. Monitor batch job duration and errors.
+55. Use log retention to manage cost.
+56. Add alerts for index health metrics.
+57. Monitor search engine cluster health.
+58. Track indexing throughput and backlogs.
+59. Track ingestion success and failure counts.
+60. Use alarms to detect missing data.
+61. Use structured JSON logs for easier parsing.
+62. Include user identifiers in logs when appropriate.
+63. Use dashboards for leadership reporting.
+64. Validate log coverage as part of QA.
+65. Use metrics to detect regression after deployments.
+66. Use tags to organize resources in dashboards.
+67. Use health checks to validate services.
+68. Create runbooks linked from alarms.
+69. Use on-call rotation for alert management.
+70. Use CloudWatch to validate RAG pipeline health.
+71. Capture search queries for relevance tuning.
+72. Use logging to investigate unexpected responses.
+73. Measure top queries for content gaps.
+74. Track cache hit ratios if caching is added.
+75. Monitor API error rates by endpoint.
+76. Use Synthetics to verify end-to-end flows.
+77. Use log sampling for high-volume services.
+78. Analyze logs to improve query performance.
+79. Monitor build pipelines and CI outcomes.
+80. Observability is critical for reliable RAG systems.

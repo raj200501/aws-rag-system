@@ -1,31 +1,12 @@
-from elasticsearch import Elasticsearch, RequestsHttpConnection
-from requests_aws4auth import AWS4Auth
+from rag_system.config import load_config
+from rag_system.storage import initialize_database
 
-def setup_index():
-    es = Elasticsearch(
-        hosts=[{'host': 'your-es-domain', 'port': 443}],
-        http_auth=AWS4Auth('your-access-key', 'your-secret-key', 'us-east-1', 'es'),
-        use_ssl=True,
-        verify_certs=True,
-        connection_class=RequestsHttpConnection
-    )
 
-    es.indices.create(index='documents', body={
-        'settings': {
-            'number_of_shards': 1,
-            'number_of_replicas': 0
-        },
-        'mappings': {
-            '_doc': {
-                'properties': {
-                    'content': {
-                        'type': 'text'
-                    }
-                }
-            }
-        }
-    })
+def setup_index() -> None:
+    config = load_config()
+    initialize_database(config.db_path)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     setup_index()
-    print("Elasticsearch index created successfully")
+    print("Local search index created successfully")

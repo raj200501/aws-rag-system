@@ -2,7 +2,7 @@ service: aws-rag-system
 
 provider:
   name: aws
-  runtime: python3.8
+  runtime: python3.11
   region: us-east-1
   iamRoleStatements:
     - Effect: "Allow"
@@ -14,14 +14,14 @@ provider:
 
 functions:
   uploadDocument:
-    handler: backend/lambda_functions/upload_document.lambda_handler
+    handler: lambda_functions/upload_document.lambda_handler
     events:
-      - s3:
-          bucket: rag-documents
-          event: s3:ObjectCreated:*
+      - http:
+          path: documents
+          method: post
 
   searchDocument:
-    handler: backend/lambda_functions/search_document.lambda_handler
+    handler: lambda_functions/search_document.lambda_handler
     events:
       - http:
           path: search
@@ -32,14 +32,18 @@ functions:
                 query: true
 
   generateResponse:
-    handler: backend/lambda_functions/generate_response.lambda_handler
+    handler: lambda_functions/generate_response.lambda_handler
     events:
       - http:
           path: generate
           method: post
-          request:
-            schemas:
-              application/json: ${file(infrastructure/schema.yaml)}
+
+  analyzeText:
+    handler: comprehend/analyze_text.lambda_handler
+    events:
+      - http:
+          path: analyze
+          method: post
 
 resources:
   Resources:

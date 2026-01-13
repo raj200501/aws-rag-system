@@ -1,17 +1,16 @@
-import boto3
 import json
 
-def lambda_handler(event, context):
-    comprehend = boto3.client('comprehend')
-    text = event['text']
+from rag_system.analyzer import analyze_text
 
-    entities = comprehend.detect_entities(Text=text, LanguageCode='en')
-    key_phrases = comprehend.detect_key_phrases(Text=text, LanguageCode='en')
+
+def lambda_handler(event, context):
+    text = event.get("text")
+    if not text:
+        return {"statusCode": 400, "body": json.dumps("text is required")}
+
+    analysis = analyze_text(text)
 
     return {
-        'statusCode': 200,
-        'body': json.dumps({
-            'entities': entities['Entities'],
-            'key_phrases': key_phrases['KeyPhrases']
-        })
+        "statusCode": 200,
+        "body": json.dumps(analysis),
     }

@@ -1,0 +1,81 @@
+AWS Lambda Overview
+1. AWS Lambda is a serverless compute service that runs code in response to events.
+2. Lambda functions are packaged as ZIP archives or container images.
+3. The runtime environment is managed by AWS, so you do not manage servers.
+4. Lambda integrates with event sources such as S3, SNS, SQS, and API Gateway.
+5. Each invocation receives an event payload and a context object.
+6. Lambda scales automatically by running multiple instances in parallel.
+7. You configure memory size, which also affects CPU allocation.
+8. The default timeout can be set per function; max timeout is 15 minutes.
+9. Lambda billing is based on number of requests and duration.
+10. Provisioned Concurrency keeps functions warm for predictable latency.
+11. Lambda supports VPC access for private resources.
+12. IAM roles define what AWS resources a function can access.
+13. Environment variables provide configuration without code changes.
+14. Lambda layers allow sharing dependencies across functions.
+15. Logs are emitted to CloudWatch Logs automatically.
+16. X-Ray tracing can be enabled for distributed tracing.
+17. Lambda can be triggered by CloudWatch Events (EventBridge) schedules.
+18. Aliases and versions enable safe deployments and traffic shifting.
+19. Dead-letter queues capture failed asynchronous invocations.
+20. Retry behavior differs between synchronous and asynchronous invocations.
+21. Lambda supports multiple languages including Python, Node.js, and Java.
+22. The handler entrypoint follows a runtime-specific signature.
+23. Lambda supports custom runtimes using the Runtime API.
+24. The /tmp directory is available for ephemeral storage.
+25. Ephemeral storage defaults to 512 MB and can be increased.
+26. Lambda functions can stream responses for some integrations.
+27. Lambda integrates with API Gateway for REST and HTTP APIs.
+28. Function URLs can expose Lambda directly via HTTPS.
+29. Lambda supports container images up to 10 GB.
+30. The execution environment is reused between invocations when possible.
+31. Warm starts reduce latency compared to cold starts.
+32. Cold starts occur when a new execution environment is created.
+33. You can optimize cold starts by reducing package size.
+34. Lambda can access secrets via AWS Secrets Manager.
+35. Use AWS Systems Manager Parameter Store for configuration.
+36. Lambda can be orchestrated by Step Functions.
+37. The maximum payload size varies by event source.
+38. AWS SDKs are included in the runtime by default for some languages.
+39. You can disable public network access by routing through VPC endpoints.
+40. Lambda permissions can be shared across accounts.
+41. AWS SAM and Serverless Framework help manage Lambda deployments.
+42. Lambda supports multiple architectures, including x86 and ARM.
+43. ARM-based Lambdas can reduce cost for compatible workloads.
+44. CloudWatch metrics include Invocations, Errors, and Duration.
+45. Concurrency limits apply at account and function levels.
+46. Reserved Concurrency can cap usage for specific functions.
+47. Lambda supports asynchronous invocation for decoupled systems.
+48. Event source mappings manage pollers for streams like Kinesis.
+49. Lambda can process batches from Kinesis and DynamoDB streams.
+50. Batch size and windowing can reduce per-record overhead.
+51. Lambda can return partial success for stream processing.
+52. CloudWatch Logs retention should be configured for cost control.
+53. Lambda can integrate with SQS to process messages.
+54. Use idempotency to handle retries safely.
+55. Lambda functions can be updated without downtime using versions.
+56. AWS CodeDeploy supports gradual traffic shifting for Lambda.
+57. Lambda supports response streaming for some runtimes.
+58. The maximum unzipped deployment package size is 250 MB.
+59. Use pip or npm to package dependencies for Python/Node.js.
+60. Lambda functions should handle errors and log context.
+61. AWS provides Powertools libraries for logging, tracing, and metrics.
+62. Security best practice: least privilege IAM roles.
+63. Use AWS Config rules to monitor Lambda settings.
+64. Function URLs can be protected with IAM or JWT authorizers.
+65. Lambda can access EFS for shared file systems.
+66. EFS integration enables larger persistent storage.
+67. Lambda supports ephemeral /tmp storage for caching.
+68. Consider timeouts for downstream dependencies.
+69. Lambda can be used for real-time processing and ETL.
+70. Use CloudWatch alarms to monitor error rates.
+71. Lambda integrates with Amazon EventBridge Pipes.
+72. Use structured logging for better observability.
+73. Avoid long-lived connections in Lambda functions.
+74. Use connection pooling where possible.
+75. Use env vars to pass service endpoints.
+76. Lambda can emit custom metrics via CloudWatch.
+77. Lambda is suitable for event-driven microservices.
+78. Multi-account deployments improve isolation.
+79. Lambda can be used in RAG pipelines for ingestion and query handling.
+80. Lambda is a core building block for serverless architectures.

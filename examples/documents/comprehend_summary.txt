@@ -1,0 +1,81 @@
+Amazon Comprehend Summary
+1. Amazon Comprehend is a natural language processing service.
+2. It can detect entities such as people, places, and organizations.
+3. It can extract key phrases from text.
+4. It can detect the dominant language of a document.
+5. It can perform sentiment analysis.
+6. It can analyze syntax and parts of speech.
+7. It provides custom classification and entity recognition.
+8. Custom models are trained with labeled data.
+9. Comprehend supports real-time and batch analysis.
+10. Batch jobs read from and write to S3 buckets.
+11. Real-time APIs return results immediately.
+12. Comprehend uses confidence scores for each detected item.
+13. Entity types include PERSON, LOCATION, and ORGANIZATION.
+14. PII detection can identify sensitive information.
+15. Comprehend Medical is a specialized service for health data.
+16. Language detection helps route text to specific pipelines.
+17. Key phrase extraction highlights important terms.
+18. Sentiment analysis returns positive, negative, neutral, or mixed.
+19. Syntax analysis can help with linguistic features.
+20. Entity recognition helps build search metadata.
+21. Comprehend can be integrated with Lambda for event-driven analysis.
+22. Comprehend is often used to enrich search indices.
+23. The service is fully managed with autoscaling.
+24. Pricing is based on the number of characters processed.
+25. Comprehend supports multiple languages.
+26. Use Comprehend to identify topics in documents.
+27. Topic modeling is available for large corpora.
+28. Document classification can route content to workflows.
+29. PII redaction can protect data before storage.
+30. Comprehend output can be stored in JSON.
+31. Use IAM roles to control access to Comprehend APIs.
+32. Comprehend integrates with AWS KMS for encryption.
+33. Use CloudWatch for monitoring API usage.
+34. Use CloudTrail to audit API calls.
+35. Comprehend output can feed downstream analytics.
+36. Entities can be indexed in search for filtering.
+37. Key phrases can boost search ranking.
+38. Comprehend custom entities detect domain-specific terms.
+39. Custom classifiers can categorize documents for RAG.
+40. Comprehend can analyze chat transcripts.
+41. Asynchronous jobs handle large volumes of text.
+42. Event-driven usage often pairs Comprehend with S3 events.
+43. Comprehend uses machine learning under the hood.
+44. Confidence scores help decide on thresholds.
+45. Comprehend can identify medical ICD-10 codes.
+46. Comprehend Medical is HIPAA eligible.
+47. Comprehend integrates with AWS Glue and Athena.
+48. NLP analysis can improve document routing.
+49. Use Comprehend to enrich metadata for retrieval.
+50. Comprehend can detect custom entities for domain knowledge.
+51. Comprehend results can be stored alongside documents.
+52. Batch jobs accept up to millions of documents.
+53. You can filter out low-confidence entities.
+54. Use Comprehend for compliance tagging.
+55. Key phrases help build summaries for RAG answers.
+56. Sentiment can be used for content moderation.
+57. Comprehend supports language codes like en, es, fr.
+58. You can integrate Comprehend into data pipelines.
+59. Custom model training requires labeled data.
+60. Comprehend includes topic modeling for unsupervised discovery.
+61. Use Comprehend for auto-tagging documents.
+62. Entity detection is useful for search facets.
+63. Comprehend can detect PII for redaction workflows.
+64. Comprehend integrates with Step Functions for orchestration.
+65. Use Comprehend to pre-process documents before indexing.
+66. Comprehend can extract key phrases for summarization.
+67. Custom classifiers can feed business workflows.
+68. Comprehend can analyze support tickets for intent.
+69. Comprehend provides confidence scores per result.
+70. Comprehend is useful for RAG pipelines to enrich context.
+71. Comprehend integrates with AWS Lambda for real-time analysis.
+72. Use Comprehend for insight dashboards.
+73. Comprehend can help identify named entities for citations.
+74. Comprehend results can be stored in analytics warehouses.
+75. Use Comprehend to improve relevance scoring.
+76. Comprehend can assist in document clustering.
+77. Comprehend can identify the dominant language of mixed corpora.
+78. Comprehend supports synchronous and asynchronous APIs.
+79. Comprehend can detect user intent in chat text.
+80. Comprehend is a core NLP building block in AWS.

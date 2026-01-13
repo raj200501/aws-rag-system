@@ -1,0 +1,81 @@
+Serverless Deployment Notes
+1. Serverless deployments package code and configure infrastructure.
+2. The Serverless Framework uses serverless.yml to define services.
+3. IAM permissions should be scoped to least privilege.
+4. Use separate stages for dev, staging, and prod.
+5. Store secrets in Parameter Store or Secrets Manager.
+6. Avoid hardcoded credentials in deployment files.
+7. Use environment variables for configuration.
+8. Use CloudFormation outputs for resource sharing.
+9. Version your lambda functions for safe releases.
+10. Use aliases to shift traffic gradually.
+11. Enable logging for API Gateway stages.
+12. Use CloudWatch alarms for errors and latency.
+13. Use dead-letter queues for async failures.
+14. Use retries with backoff for integration errors.
+15. Package dependencies explicitly to avoid missing modules.
+16. Keep function packages small to reduce cold starts.
+17. Use layers for shared dependencies.
+18. Configure timeouts for each function.
+19. Use reserved concurrency to protect downstream systems.
+20. Configure VPC access for private resources.
+21. Use API Gateway for RESTful endpoints.
+22. Protect APIs with authorizers or IAM.
+23. Use rate limiting to prevent abuse.
+24. Store logs with structured JSON for analytics.
+25. Use Serverless Framework plugins for bundling.
+26. CloudFormation stack names should be predictable.
+27. Use tags for cost allocation.
+28. Use infrastructure tests to validate deployment templates.
+29. Consider using Terraform or CDK for complex stacks.
+30. Enable X-Ray tracing for distributed systems.
+31. Validate IAM policies with automated checks.
+32. Use S3 event notifications for ingestion triggers.
+33. Use SQS queues to buffer ingestion workload.
+34. Validate schema for HTTP requests.
+35. Use API Gateway request validators.
+36. Store API definitions in source control.
+37. Use environment-specific configuration files.
+38. Maintain rollback strategies.
+39. Use CI to deploy to ephemeral environments.
+40. Keep deployment credentials scoped per environment.
+41. Use separate AWS accounts for production.
+42. Apply least privilege to cross-account roles.
+43. Use WAF for public endpoints.
+44. Monitor Lambda concurrency usage.
+45. Use CloudWatch dashboards for operations.
+46. Use structured logging with request IDs.
+47. Capture correlation IDs in logs.
+48. Use integration tests after deployment.
+49. Verify deployment outputs programmatically.
+50. Store deployment artifacts in S3.
+51. Use build pipelines for reproducible builds.
+52. Use artifact versioning for traceability.
+53. Use linting and validation for templates.
+54. Consider canary deployments for critical APIs.
+55. Apply throttling at API Gateway.
+56. Use stage variables for configuration.
+57. Keep documentation aligned with deployments.
+58. Use infrastructure as code for all changes.
+59. Review security policies regularly.
+60. Validate encryption settings for data stores.
+61. Use monitoring to detect unauthorized changes.
+62. Use backup strategies for stateful services.
+63. Create runbooks for incident response.
+64. Use least privilege for CI roles.
+65. Automate regression tests in CI.
+66. Monitor costs with budgets and alerts.
+67. Use SSM parameters for environment separation.
+68. Apply naming conventions across resources.
+69. Track dependencies between services.
+70. Use automation for cleanup of old stacks.
+71. Validate bucket policies for public access.
+72. Ensure CloudFormation stacks are in a healthy state.
+73. Use consistent logging for API Gateway and Lambda.
+74. Apply policy checks using tools like cfn-guard.
+75. Keep schema validation for request payloads.
+76. Use separate buckets for artifacts and data.
+77. Use staging environments for destructive testing.
+78. Validate health checks after deployment.
+79. Implement rollback plans for failed deployments.
+80. Keep serverless configurations audited and versioned.

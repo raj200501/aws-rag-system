@@ -1,20 +1,18 @@
 import json
-from elasticsearch import Elasticsearch, RequestsHttpConnection
-from requests_aws4auth import AWS4Auth
+
+from rag_system.config import load_config
+from rag_system.storage import search_documents
+
 
 def lambda_handler(event, context):
-    es = Elasticsearch(
-        hosts=[{'host': 'your-es-domain', 'port': 443}],
-        http_auth=AWS4Auth('your-access-key', 'your-secret-key', 'us-east-1', 'es'),
-        use_ssl=True,
-        verify_certs=True,
-        connection_class=RequestsHttpConnection
-    )
+    query = event.get("query")
+    if not query:
+        return {"statusCode": 400, "body": json.dumps("query is required")}
 
-    query = event['query']
-    response = es.search(index='documents', body={'query': {'match': {'content': query}}})
+    config = load_config()
+    results = search_documents(config.db_path, query, limit=config.top_k)
 
     return {
-        'statusCode': 200,
-        'body': json.dumps(response['hits']['hits'])
+        "statusCode": 200,
+        "body": json.dumps([result.__dict__ for result in results]),
     }
