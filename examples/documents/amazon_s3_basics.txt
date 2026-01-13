@@ -1,0 +1,81 @@
+Amazon S3 Basics
+1. Amazon S3 is an object storage service with high durability.
+2. Buckets are global namespaces and hold objects.
+3. Objects consist of data, metadata, and a key name.
+4. S3 supports multiple storage classes, including Standard and Glacier.
+5. Lifecycle policies transition objects between storage classes.
+6. Versioning preserves old versions of objects.
+7. Server-side encryption can be enabled with SSE-S3 or SSE-KMS.
+8. S3 supports client-side encryption for additional control.
+9. Bucket policies control access at the bucket level.
+10. IAM policies control access at the identity level.
+11. Access Control Lists are legacy and generally discouraged.
+12. S3 integrates with CloudTrail for audit logs.
+13. S3 provides event notifications via SNS, SQS, and Lambda.
+14. S3 inventory produces CSV or ORC reports of objects.
+15. S3 supports static website hosting.
+16. S3 replication can copy objects across regions.
+17. Replication supports same-region and cross-region modes.
+18. Object Lock provides WORM retention.
+19. S3 Block Public Access settings help prevent accidental exposure.
+20. S3 supports multipart uploads for large objects.
+21. Multipart uploads improve throughput and resilience.
+22. S3 Select retrieves subsets of data from objects.
+23. S3 Access Points simplify access for large-scale data.
+24. S3 supports bucket-level metrics via CloudWatch.
+25. S3 requesters can use requester-pays buckets.
+26. S3 provides strong read-after-write consistency.
+27. The maximum object size is 5 TB.
+28. Part sizes for multipart uploads range from 5 MB to 5 GB.
+29. S3 can host data lakes and analytics data.
+30. S3 integrates with Athena for querying data.
+31. S3 integrates with EMR and Glue for ETL.
+32. Use pre-signed URLs for temporary access.
+33. Bucket names must be DNS-compliant.
+34. S3 supports object tags for classification.
+35. Tags can be used in lifecycle rules and cost allocation.
+36. S3 provides storage lens dashboards for usage insights.
+37. S3 access logs capture requests to a bucket.
+38. Use VPC endpoints to keep S3 traffic private.
+39. S3 supports Transfer Acceleration for global uploads.
+40. S3 is highly durable with 11 nines of durability.
+41. S3 availability depends on the region and storage class.
+42. S3 provides strong integration with AWS Lambda.
+43. S3 can store model artifacts for machine learning.
+44. S3 can store documents for RAG indexing.
+45. S3 object metadata can include custom fields.
+46. S3 prefix design impacts performance for large buckets.
+47. Use intelligent tiering for unknown access patterns.
+48. S3 Batch Operations perform large-scale updates.
+49. Use S3 Object Lambda for transformations on read.
+50. S3 supports object-level logging via CloudTrail.
+51. S3 supports MFA delete for versioned buckets.
+52. The AWS CLI can sync folders to S3.
+53. S3 APIs include PUT, GET, LIST, and DELETE.
+54. S3 supports event notifications with filters.
+55. Use KMS keys to manage encryption independently.
+56. Bucket policies can require TLS for requests.
+57. Use S3 for backup and archival storage.
+58. S3 supports access analytics for unused access.
+59. S3 integrates with AWS Config for compliance.
+60. S3 is region-specific but accessible globally.
+61. S3 can store unstructured and structured data.
+62. S3 supports object-level replication metrics.
+63. Use S3 for static assets in web apps.
+64. CloudFront can be used as a CDN for S3.
+65. S3 supports signed cookies for access control.
+66. Use IAM conditions to restrict object access.
+67. S3 supports inventory encryption and delivery options.
+68. Object tags can trigger lifecycle deletion.
+69. S3 has request rate performance guidelines.
+70. Use proper naming to partition objects effectively.
+71. S3 integrates with AWS KMS for encryption audit logs.
+72. S3 event notifications are at-least-once delivery.
+73. S3 object checksum features verify data integrity.
+74. Use multipart copy for large object copies.
+75. S3 can replicate delete markers for versioned buckets.
+76. S3 is often the source of ingestion pipelines.
+77. S3 storage classes affect retrieval latency and cost.
+78. Use access points for multi-tenant architectures.
+79. S3 Object Lambda can filter sensitive fields.
+80. S3 is foundational to many analytics and RAG workflows.

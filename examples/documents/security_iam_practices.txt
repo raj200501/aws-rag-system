@@ -1,0 +1,81 @@
+Security and IAM Practices
+1. IAM stands for Identity and Access Management.
+2. Use least privilege for all IAM policies.
+3. Prefer roles over long-lived access keys.
+4. Use IAM roles for Lambda functions.
+5. Use separate roles for different components.
+6. Avoid wildcard permissions in production.
+7. Use policy conditions to scope access.
+8. Rotate access keys regularly if used.
+9. Enable MFA for privileged users.
+10. Use IAM Access Analyzer to detect public access.
+11. Use AWS Organizations SCPs for guardrails.
+12. Use separate AWS accounts for environments.
+13. Use VPC endpoints to keep traffic private.
+14. Encrypt data in transit and at rest.
+15. Use KMS for encryption key management.
+16. Restrict KMS key policies to required principals.
+17. Enable CloudTrail in all accounts.
+18. Centralize CloudTrail logs in a secure account.
+19. Use AWS Config to monitor configuration drift.
+20. Enable security hub for aggregated findings.
+21. Use GuardDuty for threat detection.
+22. Monitor IAM policy changes with alerts.
+23. Use IAM roles with external IDs for cross-account access.
+24. Use session policies for temporary restrictions.
+25. Enforce tagging for resource ownership.
+26. Use S3 Block Public Access on buckets.
+27. Review bucket policies for public statements.
+28. Use encryption for S3 buckets storing sensitive data.
+29. Enable object lock for immutable storage.
+30. Use KMS key rotation for compliance.
+31. Use parameter store for secret configuration.
+32. Avoid storing secrets in source control.
+33. Use Secrets Manager for rotation of credentials.
+34. Restrict Lambda network access to required subnets.
+35. Use security groups to limit inbound/outbound traffic.
+36. Use WAF for public endpoints.
+37. Use API Gateway authorizers for authentication.
+38. Implement rate limiting to reduce abuse.
+39. Monitor failed authentication attempts.
+40. Use CloudWatch alarms for access anomalies.
+41. Use least privilege for CI/CD roles.
+42. Rotate CI/CD tokens regularly.
+43. Use separate roles for build and deploy.
+44. Use IAM permissions boundaries for teams.
+45. Use SSO for centralized access control.
+46. Use service control policies for compliance.
+47. Use resource policies for shared services.
+48. Use encryption for RDS and DynamoDB.
+49. Use TLS for all service endpoints.
+50. Use private subnets for internal databases.
+51. Use NAT gateways for outbound access if needed.
+52. Use endpoint policies to restrict AWS service access.
+53. Use logging for all security-relevant events.
+54. Use VPC flow logs for network visibility.
+55. Implement key management procedures.
+56. Use secure coding practices for Lambda handlers.
+57. Validate inputs to prevent injection attacks.
+58. Sanitize logs to avoid leaking secrets.
+59. Apply patches and updates regularly.
+60. Use vulnerability scanning for dependencies.
+61. Use infrastructure as code for repeatability.
+62. Review IAM policies periodically.
+63. Use account-wide access analyzer reports.
+64. Restrict root account usage.
+65. Enable billing alerts for unexpected costs.
+66. Use backups for critical data stores.
+67. Use disaster recovery plans for resilience.
+68. Conduct security reviews for new features.
+69. Use change control processes in production.
+70. Audit access to sensitive datasets.
+71. Use data classification labels in metadata.
+72. Implement data retention policies.
+73. Monitor API usage for unusual patterns.
+74. Use logging retention policies for compliance.
+75. Use event-driven alerts for security events.
+76. Use encryption context for fine-grained KMS controls.
+77. Use IAM Access Advisor to review permissions.
+78. Use role chaining sparingly to reduce complexity.
+79. Use security testing in CI for infrastructure.
+80. Security practices are foundational to RAG systems.

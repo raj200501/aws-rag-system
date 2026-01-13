@@ -1,0 +1,81 @@
+OpenSearch and Elasticsearch Search Basics
+1. OpenSearch and Elasticsearch are search and analytics engines.
+2. Documents are stored in indices with mappings.
+3. Mappings define field types such as text, keyword, and date.
+4. Text fields are analyzed for full-text search.
+5. Keyword fields are exact-match for filters and aggregations.
+6. The inverted index powers fast search queries.
+7. Analyzers tokenize text, remove stop words, and apply stemming.
+8. Query DSL allows complex boolean queries.
+9. Match queries are used for full-text search.
+10. Term queries are used for exact matches.
+11. Aggregations summarize data for analytics.
+12. Index templates apply settings to new indices.
+13. Shards divide data across nodes for scalability.
+14. Replicas provide redundancy and higher read throughput.
+15. Refresh intervals determine search visibility latency.
+16. Bulk indexing improves ingestion performance.
+17. The _bulk API accepts multiple operations in a single request.
+18. Query results include a _score for relevance.
+19. The BM25 algorithm is a common default scoring model.
+20. Filters do not affect scoring but narrow result sets.
+21. Highlighting returns snippets with query terms.
+22. OpenSearch supports k-NN search for vector similarity.
+23. Vector search powers semantic retrieval.
+24. OpenSearch supports ingest pipelines for transformations.
+25. Ingest pipelines can enrich documents at index time.
+26. Index aliases simplify blue-green deployments.
+27. Use index lifecycle management to manage retention.
+28. Use snapshots for backups.
+29. OpenSearch provides Dashboards for visualization.
+30. The REST API supports JSON requests.
+31. Security features include access control and audit logging.
+32. Role-based access control defines index permissions.
+33. Index settings include refresh and replica counts.
+34. Search queries can combine must, should, and must_not clauses.
+35. The term "document" refers to a JSON object stored in the index.
+36. Search results include hits and total counts.
+37. Sorting can be applied on keyword or numeric fields.
+38. Pagination uses from/size parameters.
+39. The scroll API supports deep pagination.
+40. The search_after parameter supports efficient pagination.
+41. OpenSearch supports geospatial queries.
+42. Aggregations include terms, date_histogram, and metrics.
+43. Indexing pipelines can parse structured content.
+44. Multi-field mappings allow both text and keyword indexing.
+45. The `_source` field stores original JSON.
+46. Source filtering reduces payload sizes.
+47. Query caches improve repeated query performance.
+48. Fielddata enables aggregations on text fields.
+49. Use doc_values for efficient sorting and aggregation.
+50. Cluster health states include green, yellow, and red.
+51. Shard allocation controls data distribution.
+52. Hot-warm architectures separate indexing and storage.
+53. Search templates allow parameterized queries.
+54. Synonyms improve recall for search queries.
+55. Stop words can be customized per analyzer.
+56. Token filters customize text processing.
+57. Custom analyzers combine tokenizers and filters.
+58. OpenSearch supports alerting on query conditions.
+59. The REST API supports `_search` and `_count` endpoints.
+60. Use `_analyze` to test analyzers.
+61. Use `_mapping` to view field mappings.
+62. Performance tuning involves shard size and refresh rates.
+63. Index shards should be sized for expected data growth.
+64. Use circuit breakers to prevent memory issues.
+65. OpenSearch supports cross-cluster search.
+66. Cross-cluster replication supports DR strategies.
+67. Use index aliases for zero-downtime reindexing.
+68. Reindex API copies data across indices.
+69. Use pipelines for data normalization.
+70. Document IDs can be client-generated or auto-generated.
+71. Delete-by-query removes documents based on filters.
+72. OpenSearch can be used for log analytics.
+73. Vector search in OpenSearch supports cosine similarity.
+74. Use script scoring for custom ranking.
+75. OpenSearch supports percolate queries for reverse search.
+76. Search can be combined with filters for structured constraints.
+77. Monitoring uses built-in metrics and dashboards.
+78. Index statistics help tune query performance.
+79. OpenSearch is commonly used for RAG retrieval.
+80. Search quality depends on analyzer and content strategy.

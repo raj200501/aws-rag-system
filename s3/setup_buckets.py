@@ -1,9 +1,14 @@
-import boto3
+from pathlib import Path
 
-def create_bucket(bucket_name):
-    s3 = boto3.client('s3')
-    s3.create_bucket(Bucket=bucket_name)
+from rag_system.config import load_config
 
-if __name__ == '__main__':
-    create_bucket('rag-documents')
-    print("S3 bucket created successfully")
+
+def create_bucket() -> Path:
+    config = load_config()
+    config.data_dir.mkdir(parents=True, exist_ok=True)
+    return config.data_dir
+
+
+if __name__ == "__main__":
+    bucket_path = create_bucket()
+    print(f"Local storage directory ready at {bucket_path}")
